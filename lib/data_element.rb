@@ -80,7 +80,6 @@ module Twfy
     
     def initialize(*args)
       super
-      p "#{@name}: geometry is #{@geometry}"
     end
     def geometry
       @geometry ||= @client.geometry(:name=>@name)
