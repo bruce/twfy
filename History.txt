@@ -1,5 +1,10 @@
 == 1.0.0 / 2006-11-08
 
-* 1 major enhancement
-  * Birthday!
-
+* Initial release supporting all services from TWFY API 1.0.0
+* Basic support for 'daisy-chained' service calls via DataElement subclasses, caching results
+  * MP (info, debates, comments)
+  * Constituency (mp, geometry)
+* Coming up:
+  * Easy pagination of debates, comments, etc
+  * Data mining MPInfo information (accessible directly from MP instance)
+  * Other stuff :-)

@@ -5,11 +5,18 @@ require 'hoe'
 require './lib/twfy.rb'
 
 Hoe.new('twfy', Twfy::VERSION) do |p|
-  p.rubyforge_name = 'twfy'
-  # p.summary = 'FIX'
-  # p.description = p.paragraphs_of('README.txt', 2..5).join("\n\n")
-  # p.url = p.paragraphs_of('README.txt', 0).first.split(/\n/)[1..-1]
-  p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
+    p.rubyforge_name = 'twfy'
+    p.summary = 'Ruby library to interface with the TheyWorkForYou(.com) API; an information source on Parliament'
+    p.description =<<EOD
+      Ruby library to interface with the TheyWorkForYou API. TheyWorkForYou.com is 
+      "a non-partisan, volunteer-run website which aims to make it easy for people to keep
+      tabs on their elected and unelected representatives in Parliament."
+EOD
+    p.url = "http://twfy.rubyforge.org"
+    p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
+    p.add_dependency('json')
+    p.email = %q{bruce@codefluency.com}
+    p.author = ["Bruce Williams"]
 end
 
 # vim: syntax=Ruby

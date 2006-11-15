@@ -31,17 +31,18 @@ http://rubyforge.org/projects/twfy
 
 Use is very easy.  
 
-All API calls return either OpenStructs or arrays of OpenStructs
+=== Get a Client
 
   require 'twfy'
   client = Twfy::Client.new
 
-  # Call API methods on client
+=== Call API methods directly on client
 
   puts client.constituency(:postcode=>'IP6 9PN').name
   # => Central Suffolk & North Ipswich
 
-  puts client.mp(:postcode=>'IP6 9PN').full_name
+  mp = client.mp(:postcode=>'IP6 9PN')
+  puts mp.full_name
   # => Michael Lord
 
   # Get a *lot* of info about this MP
@@ -53,6 +54,29 @@ All API calls return either OpenStructs or arrays of OpenStructs
 
   # Get number of debates in the House of Commons mentioning 'Iraq'
   number = client.debates(:type=>'commons',:search=>'Iraq').info['total_results']
+
+=== Daisy chaining
+
+A few methods on the client return non-OpenStruct instances that support daisy chaining.  Using these to access
+related data has some benefits; less parameters to pass around, and caching.
+
+Here are some examples
+
+  # Get the MP for the last constituency (if you sort them alphabetically) 
+  mp = client.constituencies.sort_by{|c| c.name }.last.mp
+  # get the geometry information for that constituency (coming from the MP)
+  geometry = mp.constituency.geometry
+
+  # An overkill example showing caching (no services are called here)
+  mp = mp.constituency.mp.constituency.geometry.constituency.mp
+
+  # These return equivalent results (Note how much easier the first is)
+  info1 = mp.info # this is cached for subsequent calls
+  info2 = client.mp_info(:id=>mp.person_id)
+
+  # Get pages of debates mentioning 'medicine'
+  debates1 = mp.debates(:search=>'medicine')
+  debates2 = mp.debates(:search=>'medicine', :page=>2)
   
 See http://www.theyworkforyou.com/api/docs for API documentation.
 
@@ -69,9 +93,10 @@ No special instructions.
 
 == LICENSE:
 
-(The Creative Commons Share-Alike License)
-http://creativecommons.org/licenses/by-sa/2.5/
+This library uses the MIT License
 Copyright (c) 2006 Bruce Williams
+
+Data is licensed separately:
 
 The TheyWorkForYou license statement, from their website (http://www.theyworkforyou.com/api/), is:
 

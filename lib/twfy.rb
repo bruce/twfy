@@ -1,30 +1,46 @@
- 
 require 'open-uri'
 require 'json'
 require 'cgi'
 require 'ostruct'
+require 'logger'
+
+require File.join(File.dirname(__FILE__), 'data_element')
 
 module Twfy
   
   VERSION = '1.0.0'
   BASE = URI.parse('http://www.theyworkforyou.com/api/')
   
+  API_VERSION = '1.0.0'
+  
   class Client
+    
+    class Error < ::StandardError; end
+    class ServiceArgumentError < ::ArgumentError; end
+    class APIError < ::StandardError; end
+            
+    def initialize(log_to=$stderr)
+      @logger = Logger.new(log_to)
+    end
+    
+    def log(message, level=:info)
+      @logger.send(level, message) if $DEBUG
+    end
     
     def convert_url(params={})
       service :convertURL, validate(params, :require => :url)
     end
 
     def constituency(params={})
-      service :getConstituency, validate(params, :require => :postcode)
+      service :getConstituency, validate(params, :require => :postcode), Constituency
     end
 
     def constituencies(params={})
-      service :getConstituencies, validate(params, :allow => [:date, :search, :longitude, :latitude, :distance])
+      service :getConstituencies, validate(params, :allow => [:date, :search, :longitude, :latitude, :distance]), Constituency
     end
 
     def mp(params={})
-      service :getMP, validate(params, :allow => [:postcode, :id, :always_return])
+      service :getMP, validate(params, :allow => [:postcode, :constituency, :id, :always_return]), MP
     end
 
     def mp_info(params={})
@@ -32,7 +48,7 @@ module Twfy
     end
 
     def mps(params={})
-      service :getMPs, validate(params, :allow => [:date, :search])
+      service :getMPs, validate(params, :allow => [:date, :search]), MP
     end
 
     def lord(params={})
@@ -44,7 +60,7 @@ module Twfy
     end
 
     def geometry(params={})
-      service :getGeometry, validate(params, :allow => :name)
+      service :getGeometry, validate(params, :allow => :name), Geometry
     end
 
     def committee(params={})
@@ -75,6 +91,22 @@ module Twfy
     def comments(params={})
       service :getComments, validate(params, :allow => [:date, :search, :user_id, :pid, :page, :num])
     end
+    
+    def service(name, params={}, klass=OpenStruct)
+      log "Calling service #{name}"
+      url = BASE + name.to_s
+      url.query = build_query(params)
+      result = JSON.parse(url.read)
+      log result.inspect
+      unless result.kind_of?(Enumerable)
+        raise Error, "Could not handle result: #{result.inspect}"
+      end
+      if result.kind_of?(Hash) && result['error']
+        raise APIError, result['error'].to_s
+      else
+        structure result, klass
+      end
+    end
             
     #######
     private
@@ -93,47 +125,45 @@ module Twfy
         allowed += dependent_keys if provided_keys.include?(key)
       end
       
-      if missing = requirements.any?{|r| !provided_keys.include? r }
-        raise ArgumentError, "Missing required params #{missing.inspect}"
+      if (missing = requirements.select{|r| !provided_keys.include? r }).any?
+        raise ServiceArgumentError, "Missing required params #{missing.inspect}"
       end
       
       if require_one.any?
         if (count = provided_keys.inject(0){|count,item| count + (require_one.include?(item) ? 1 : 0) }) < 1
-          raise ArgumentError, "Need exactly one of #{require_one.inspect}"
+          raise ServiceArgumentError, "Need exactly one of #{require_one.inspect}"
         elsif count > 1
-          raise ArgumentError, "Only one of #{require_one.inspect} allowed"
+          raise ServiceArgumentError, "Only one of #{require_one.inspect} allowed"
         end
       end
       
       unless (extra = provided_keys - (requirements + allowed + require_one)).empty?
-        raise ArgumentError, "Unknown params #{extra.inspect}"
+        raise ServiceArgumentError, "Unknown params #{extra.inspect}"
       end
       
       params
     end
     
-    def service(name, params={})
-      url = BASE + name.to_s
-      url.query = build_query(params)
-      structify JSON.parse(url.read)
-    end
-    
-    def structify(value)
+    def structure(value, klass)
       case value
       when Array
-        value.map{|r| structify(r) }
+        value.map{|r| structure(r, klass) }
       when Hash
-        OpenStruct.new value
+        if klass == Hash
+          value
+        else
+          klass.ancestors.include?(DataElement) ? klass.new(self,value) : klass.new(value)
+        end
       else
         result
       end
     end
     
     def build_query(params)
+      params.update(:version=>API_VERSION)
       params.map{|set| set.map{|i| CGI.escape(i.to_s)}.join('=') }.join('&')
     end
         
   end
-  
   
 end

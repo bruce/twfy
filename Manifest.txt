@@ -4,4 +4,5 @@ README.txt
 Rakefile
 bin/twfy
 lib/twfy.rb
+lib/data_element.rb
 test/test_twfy.rb
