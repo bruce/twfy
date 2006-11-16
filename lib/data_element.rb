@@ -35,7 +35,6 @@ module Twfy
     
     def convert(field, value)
       if conversion = @@conversions[field.to_sym]
-        puts "Calling conversion of #{field}"
         args = [value]
         args.unshift self if conversion.arity == 2
         conversion.call(*args)

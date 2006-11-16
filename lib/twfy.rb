@@ -28,7 +28,9 @@ module Twfy
     end
     
     def convert_url(params={})
-      service :convertURL, validate(params, :require => :url)
+      service :convertURL, validate(params, :require => :url) do |value|
+        URI.parse(value['url'])
+      end
     end
 
     def constituency(params={})
@@ -92,7 +94,7 @@ module Twfy
       service :getComments, validate(params, :allow => [:date, :search, :user_id, :pid, :page, :num])
     end
     
-    def service(name, params={}, klass=OpenStruct)
+    def service(name, params={}, target=OpenStruct, &block)
       log "Calling service #{name}"
       url = BASE + name.to_s
       url.query = build_query(params)
@@ -104,7 +106,7 @@ module Twfy
       if result.kind_of?(Hash) && result['error']
         raise APIError, result['error'].to_s
       else
-        structure result, klass
+        structure result, block || target
       end
     end
             
@@ -144,15 +146,17 @@ module Twfy
       params
     end
     
-    def structure(value, klass)
+    def structure(value, target)
       case value
       when Array
-        value.map{|r| structure(r, klass) }
+        value.map{|r| structure(r, target) }
       when Hash
-        if klass == Hash
+        if target.kind_of?(Proc)
+          target.call(value)
+        elsif target == Hash
           value
         else
-          klass.ancestors.include?(DataElement) ? klass.new(self,value) : klass.new(value)
+          target.ancestors.include?(DataElement) ? target.new(self,value) : target.new(value)
         end
       else
         result

@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'hoe'
-require './lib/twfy.rb'
+require 'lib/twfy.rb'
 
 Hoe.new('twfy', Twfy::VERSION) do |p|
     p.rubyforge_name = 'twfy'
@@ -14,7 +14,7 @@ Hoe.new('twfy', Twfy::VERSION) do |p|
 EOD
     p.url = "http://twfy.rubyforge.org"
     p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-    p.add_dependency('json')
+    p.extra_deps = ['json']
     p.email = %q{bruce@codefluency.com}
     p.author = ["Bruce Williams"]
 end
