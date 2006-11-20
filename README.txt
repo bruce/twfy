@@ -1,6 +1,6 @@
 twfy
     by Bruce Williams (http://codefluency.com)
-    and Martin Owens
+    and Martin Owen
 
 == DESCRIPTION:
   
