@@ -1,6 +1,6 @@
 twfy
-    by Bruce Williams
-    http://codefluency.com
+    by Bruce Williams (http://codefluency.com)
+    and Martin Owen
 
 == DESCRIPTION:
   
@@ -27,7 +27,7 @@ getMPInfo:: mp_info
 Please submit bug reports to the RubyForge tracker via the project's homepage at
 http://rubyforge.org/projects/twfy
 
-== SYNOPSYS:
+== SYNOPSIS:
 
 Use is very easy.  
 
@@ -57,8 +57,7 @@ Use is very easy.
 
 === Daisy chaining
 
-A few methods on the client return non-OpenStruct instances that support daisy chaining.  Using these to access
-related data has some benefits; less parameters to pass around, and caching.
+A few methods on the client return non-OpenStruct instances that support daisy chaining.  Using these to access related data more naturally (with caching).
 
 Here are some examples
 
@@ -67,7 +66,8 @@ Here are some examples
   # get the geometry information for that constituency (coming from the MP)
   geometry = mp.constituency.geometry
 
-  # An overkill example showing caching (no services are called here)
+  # An overkill example showing caching (no services are called here, since
+  # the results have already been cached from above)
   mp = mp.constituency.mp.constituency.geometry.constituency.mp
 
   # These return equivalent results (Note how much easier the first is)

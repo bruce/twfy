@@ -6,5 +6,5 @@
   * Constituency (mp, geometry)
 * Coming up:
   * Easy pagination of debates, comments, etc
-  * Data mining MPInfo information (accessible directly from MP instance)
+  * Data mining MPInfo information (ie expenses, accessible directly from MP instance)
   * Other stuff :-)

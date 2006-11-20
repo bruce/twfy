@@ -14,9 +14,9 @@ Hoe.new('twfy', Twfy::VERSION) do |p|
 EOD
     p.url = "http://twfy.rubyforge.org"
     p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-    p.extra_deps = ['json']
+    p.extra_deps = ['json', 'paginator']
     p.email = %q{bruce@codefluency.com}
-    p.author = ["Bruce Williams"]
+    p.author = ["Bruce Williams", "Martin Owens"]
 end
 
 # vim: syntax=Ruby
