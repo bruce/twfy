@@ -26,6 +26,14 @@ class BasicReturnedDataTest < Test::Unit::TestCase
       assert_kind_of Twfy::MP, mp
     end
   end
+
+  def test_msps
+    msps = @client.msps
+    assert_kind_of Array, msps
+    msps.each do |msp|
+      assert_kind_of OpenStruct, msp
+    end
+  end
   
   def test_constituency_and_geometry
     c = @client.constituency(:postcode => 'IP6 9PN')

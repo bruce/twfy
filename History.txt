@@ -1,3 +1,9 @@
+== 1.1.0 / 2008-08-02
+
+* Added support for new features of TWFY API (still version 1.0.0).
+  * getMLAs - Members of the Legislative Assembly (Members of the Northern Irish Assembly to you and me)
+  * getMSPs - Members of the Scottish Parliament
+
 == 1.0.0 / 2006-11-08
 
 * Initial release supporting all services from TWFY API 1.0.0

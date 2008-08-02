@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'open-uri'
 require 'json'
 require 'cgi'
@@ -8,7 +9,7 @@ require File.join(File.dirname(__FILE__), 'data_element')
 
 module Twfy
   
-  VERSION = '1.0.0'
+  VERSION = '1.1.0'
   BASE = URI.parse('http://www.theyworkforyou.com/api/')
   
   API_VERSION = '1.0.0'
@@ -59,6 +60,14 @@ module Twfy
 
     def lords(params={})
       service :getLords, validate(params, :allow => [:date, :search])
+    end
+
+    def mlas(params={})
+      service :getMLAs, validate(params, :allow => [:date, :party, :search])
+    end
+
+    def msps(params={})
+      service :getMSPs, validate(params, :allow => [:date, :party, :search])
     end
 
     def geometry(params={})

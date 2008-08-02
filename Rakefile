@@ -16,7 +16,7 @@ EOD
     p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
     p.extra_deps = ['json', 'paginator']
     p.email = %q{bruce@codefluency.com}
-    p.author = ["Bruce Williams", "Martin Owens"]
+    p.author = ["Bruce Williams", "Martin Owen"]
 end
 
 # vim: syntax=Ruby
