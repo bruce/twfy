@@ -1,6 +1,6 @@
 twfy
     by Bruce Williams (http://codefluency.com)
-    and Martin Owen
+    and Martin Owen (http://martinowen.net)
 
 == DESCRIPTION:
   
@@ -34,7 +34,10 @@ Use is very easy.
 === Get a Client
 
   require 'twfy'
-  client = Twfy::Client.new
+  client = Twfy::Client.new(<YOUR API KEY HERE>)
+
+Note that the Twfy::Client constructor in version 1.0.1 of the binding requires an API Key
+string. If you don't have one they are available at http://www.theyworkforyou.com/api/key
 
 === Call API methods directly on client
 

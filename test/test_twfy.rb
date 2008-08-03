@@ -2,9 +2,12 @@ require 'test/unit'
 require File.join(File.dirname(__FILE__), '../lib/twfy')
 
 class BasicReturnedDataTest < Test::Unit::TestCase
-  
+
+  API_KEY_LOCATION  = File.join(File.dirname(__FILE__), 'api_key')
+
   def setup
-    @client = Twfy::Client.new
+    api_key = File.open(API_KEY_LOCATION){ |f| f.readlines[0].chomp }
+    @client = Twfy::Client.new(api_key)
   end
   
   def test_convert_url

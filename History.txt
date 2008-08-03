@@ -1,5 +1,6 @@
-== 1.1.0 / 2008-08-02
+== 1.0.1 / 2008-08-02
 
+* In the near future the TWFY API will require an API Key for all calls. In preparation for this, this binding now requires an API Key. They are available at http://www.theyworkforyou.com/api/key
 * Added support for new features of TWFY API (still version 1.0.0).
   * getMLAs - Members of the Legislative Assembly (Members of the Northern Irish Assembly to you and me)
   * getMSPs - Members of the Scottish Parliament

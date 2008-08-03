@@ -9,7 +9,7 @@ require File.join(File.dirname(__FILE__), 'data_element')
 
 module Twfy
   
-  VERSION = '1.1.0'
+  VERSION = '1.0.1'
   BASE = URI.parse('http://www.theyworkforyou.com/api/')
   
   API_VERSION = '1.0.0'
@@ -20,7 +20,8 @@ module Twfy
     class ServiceArgumentError < ::ArgumentError; end
     class APIError < ::StandardError; end
             
-    def initialize(log_to=$stderr)
+    def initialize(api_key, log_to=$stderr)
+      @api_key = api_key
       @logger = Logger.new(log_to)
     end
     
@@ -173,7 +174,7 @@ module Twfy
     end
     
     def build_query(params)
-      params.update(:version=>API_VERSION)
+      params.update(:key=>@api_key, :version=>API_VERSION)
       params.map{|set| set.map{|i| CGI.escape(i.to_s)}.join('=') }.join('&')
     end
         
