@@ -30,13 +30,19 @@ Usage is simple.
 
 h3. Get a Client
 
+<notextile>
+<pre>
   require 'twfy'
   client = Twfy::Client.new(<YOUR API KEY HERE>)
+</pre>
+</notextile>
 
 Note that the Twfy::Client constructor in version 1.0.1 of the binding requires an API Key string. If you don't have one they are available at http://www.theyworkforyou.com/api/key
 
 h3. Call API methods directly on client
 
+<notextile>
+<pre>
   puts client.constituency(:postcode=>'IP6 9PN').name
   # => Central Suffolk & North Ipswich
 
@@ -53,6 +59,8 @@ h3. Call API methods directly on client
 
   # Get number of debates in the House of Commons mentioning 'Iraq'
   number = client.debates(:type=>'commons',:search=>'Iraq').info['total_results']
+</pre>
+</notextile>
 
 h3. Daisy chaining
 
@@ -60,6 +68,8 @@ A few methods on the client return non-OpenStruct instances that support daisy c
 
 Here are some examples
 
+<notextile>
+<pre>
   # Get the MP for the last constituency (if you sort them alphabetically) 
   mp = client.constituencies.sort_by{|c| c.name }.last.mp
   # get the geometry information for that constituency (coming from the MP)
@@ -76,6 +86,8 @@ Here are some examples
   # Get pages of debates mentioning 'medicine'
   debates1 = mp.debates(:search=>'medicine')
   debates2 = mp.debates(:search=>'medicine', :page=>2)
+</pre>
+</notextile>
   
 See http://www.theyworkforyou.com/api/docs for API documentation.
 
