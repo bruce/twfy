@@ -43,18 +43,18 @@ h3. Call API methods directly on client
 
 <notextile>
 <pre>
-  puts client.constituency(:postcode=>'IP6 9PN').name
+  puts client.constituency(:postcode => 'IP6 9PN').name
   # => Central Suffolk & North Ipswich
 
-  mp = client.mp(:postcode=>'IP6 9PN')
+  mp = client.mp(:postcode => 'IP6 9PN')
   puts mp.full_name
   # => Michael Lord
 
   # Get a *lot* of info about this MP
-  info = client.mp_info(:id=>mp.person_id)
+  info = client.mp_info(:id => mp.person_id)
 
   # Get a sorted list of all the parties in the House of Lords
-  client.lords.map{|l| l.party}.uniq.sort
+  client.lords.map { |l| l.party }.uniq.sort
 	#=> ["Bishop", "Conservative", "Crossbench", "DUP", "Green", "Labour", "Liberal Democrat", "Other"]
 
   # Get number of debates in the House of Commons mentioning 'Iraq'
@@ -71,7 +71,7 @@ Here are some examples
 <notextile>
 <pre>
   # Get the MP for the last constituency (if you sort them alphabetically) 
-  mp = client.constituencies.sort_by{|c| c.name }.last.mp
+  mp = client.constituencies.sort_by{ |c| c.name }.last.mp
   # get the geometry information for that constituency (coming from the MP)
   geometry = mp.constituency.geometry
 
@@ -81,11 +81,11 @@ Here are some examples
 
   # These return equivalent results (Note how much easier the first is)
   info1 = mp.info # this is cached for subsequent calls
-  info2 = client.mp_info(:id=>mp.person_id)
+  info2 = client.mp_info(:id => mp.person_id)
 
   # Get pages of debates mentioning 'medicine'
-  debates1 = mp.debates(:search=>'medicine')
-  debates2 = mp.debates(:search=>'medicine', :page=>2)
+  debates1 = mp.debates(:search => 'medicine')
+  debates2 = mp.debates(:search => 'medicine', :page=>2)
 </pre>
 </notextile>
   
@@ -103,7 +103,7 @@ h2. Requirements
 h2. License
 
 This library uses the MIT License
-Copyright (c) 2006 Bruce Williams
+Copyright (c) 2006-2008 Bruce Williams, Martin Owen
 
 Data is licensed separately:
 
