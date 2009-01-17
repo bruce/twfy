@@ -1,45 +1,41 @@
-twfy
-    by Bruce Williams (http://codefluency.com)
-    and Martin Owen (http://martinowen.net)
+h1. They Work For You 
 
-== DESCRIPTION:
-  
-Ruby library to interface with the TheyWorkForYou API.
+"Ruby":http://ruby-lang.org library to interface with the TheyWorkForYou API.
 
 From their website:
 
-"TheyWorkForYou.com is a non-partisan, volunteer-run website which aims to make it easy
-for people to keep tabs on their elected and unelected representatives in Parliament."
+bq. TheyWorkForYou.com is a non-partisan, volunteer-run website which aims to make it easy for people to keep tabs on their elected and unelected representatives in Parliament.
 
-== FEATURES/PROBLEMS:
-  
-All services [currently] provided by the API are supported.
+h2. Authors
+
+* "Bruce Williams":http://codefluency.com
+* "Martin Owen":http://martinowen.net
+
+h2. Features
 
 The Ruby API closely mirrors that of TWFY, with the exception that the client
-methods are in lowercase and don't include the 'get' prefix.
+methods are in lowercase and don't include the @get@ prefix.
 
 Some examples:
 
-getComments:: comments
-getMPs:: mps
-getMPInfo:: mp_info
+* @getComments@ -> @comments@
+* @getMPs@ -> @mps@
+* @getMPInfo@ -> @mp_info@
 
-Please submit bug reports to the RubyForge tracker via the project's homepage at
-http://rubyforge.org/projects/twfy
+Please submit bug reports to the RubyForge tracker via the project's homepage at http://rubyforge.org/projects/twfy or send a message via GitHub.
 
-== SYNOPSIS:
+h2. Synopsis
 
-Use is very easy.  
+Usage is simple.  
 
-=== Get a Client
+h3. Get a Client
 
   require 'twfy'
   client = Twfy::Client.new(<YOUR API KEY HERE>)
 
-Note that the Twfy::Client constructor in version 1.0.1 of the binding requires an API Key
-string. If you don't have one they are available at http://www.theyworkforyou.com/api/key
+Note that the Twfy::Client constructor in version 1.0.1 of the binding requires an API Key string. If you don't have one they are available at http://www.theyworkforyou.com/api/key
 
-=== Call API methods directly on client
+h3. Call API methods directly on client
 
   puts client.constituency(:postcode=>'IP6 9PN').name
   # => Central Suffolk & North Ipswich
@@ -58,7 +54,7 @@ string. If you don't have one they are available at http://www.theyworkforyou.co
   # Get number of debates in the House of Commons mentioning 'Iraq'
   number = client.debates(:type=>'commons',:search=>'Iraq').info['total_results']
 
-=== Daisy chaining
+h3. Daisy chaining
 
 A few methods on the client return non-OpenStruct instances that support daisy chaining.  Using these to access related data more naturally (with caching).
 
@@ -86,15 +82,13 @@ See http://www.theyworkforyou.com/api/docs for API documentation.
 Please note that data pulled from the API is licensed separately;
 see the LICENSE portion of this README for further details.
 
-== REQUIREMENTS:
+h2. Requirements
 
-+ json library (available as a gem)
+* The JSON gem
 
-== INSTALL:
+  sudo gem install json
 
-No special instructions.
-
-== LICENSE:
+h2. License
 
 This library uses the MIT License
 Copyright (c) 2006 Bruce Williams
