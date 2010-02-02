@@ -52,7 +52,7 @@ module Twfy
     end
 
     def mps(params={})
-      service :getMPs, validate(params, :allow => [:date, :search]), MP
+      service :getMPs, validate(params, :allow => [:date, :party, :search]), MP
     end
 
     def lord(params={})
@@ -60,7 +60,7 @@ module Twfy
     end
 
     def lords(params={})
-      service :getLords, validate(params, :allow => [:date, :search])
+      service :getLords, validate(params, :allow => [:date, :party, :search])
     end
 
     def mlas(params={})
