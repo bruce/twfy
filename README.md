@@ -16,6 +16,8 @@ Some examples:
 
 ## Requirements
 
+Ruby 1.9+
+
  * multi_json
  * paginator
 
