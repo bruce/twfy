@@ -4,24 +4,23 @@ require 'twfy'
 require 'test/unit'
 require 'vcr'
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.hook_into :webmock
-end
+# If you need to record new episodes, run rake with:
+#
+#   $ rake test API_KEY=YOUR-REAL-API-KEY
+#
+TEST_API_KEY = ENV['API_KEY'] || 'TEST_API_KEY'
 
-class VCRTest < Test::Unit::TestCase
-  def test_example_dot_com
-    VCR.use_cassette('synopsis') do
-      response = Net::HTTP.get_response(URI('http://www.iana.org/domains/reserved'))
-      assert_match /Example domains/, response.body
-    end
-  end
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.filter_sensitive_data("<API_KEY>") { TEST_API_KEY }
+  c.default_cassette_options = {record: :new_episodes}
 end
 
 class TwfyTest < Test::Unit::TestCase
 
   def api_key
-    @api_key ||= File.read(File.expand_path('../api_key', __FILE__)).strip
+    @api_key ||= TEST_API_KEY
   end
 
   def setup
