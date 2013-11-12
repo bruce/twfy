@@ -1,13 +1,11 @@
-require File.dirname(File.expand_path(__FILE__)) + '/helper_test.rb'
+require "test_helper.rb"
 
-class ChainDataTest < Test::Unit::TestCase
-
-  API_KEY_LOCATION = File.join(File.dirname(__FILE__), 'api_key')
+class DataElementTest < TwfyTest
 
   def setup
-    api_key = File.open(API_KEY_LOCATION){ |f| f.readlines[0].chomp }
+    super
     @client = Twfy::Client.new(api_key)
-    @mp = @client.mp(:postcode=>'IP6 9PN')
+    @mp = @client.mp(postcode: 'IP6 9PN')
   end
 
   def test_single_chain_class
@@ -44,8 +42,7 @@ class ChainDataTest < Test::Unit::TestCase
   end
 
   def test_simple_chain_and_direct_call_are_equivalent
-    assert_equal @client.mp_info(:id=>@mp.person_id), @mp.info
+    assert_equal @client.mp_info(id: @mp.person_id), @mp.info
   end
 
 end
-

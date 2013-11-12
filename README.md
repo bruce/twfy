@@ -17,6 +17,7 @@ Some examples:
 ## Requirements
 
  * multi_json
+ * paginator
 
 ## Examples
 

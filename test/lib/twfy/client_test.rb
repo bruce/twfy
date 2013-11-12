@@ -1,11 +1,9 @@
-require File.dirname(File.expand_path(__FILE__)) + '/helper_test.rb'
+require "test_helper"
 
-class BasicReturnedDataTest < Test::Unit::TestCase
-
-  API_KEY_LOCATION  = File.join(File.dirname(__FILE__), 'api_key')
+class ClientTest < TwfyTest
 
   def setup
-    api_key = File.open(API_KEY_LOCATION){ |f| f.readlines[0].chomp }
+    super
     @client = Twfy::Client.new(api_key)
   end
 
@@ -18,6 +16,7 @@ class BasicReturnedDataTest < Test::Unit::TestCase
   def test_mp_and_mp_info
     mp = @client.mp(:postcode=>'IP6 9PN')
     assert_kind_of Twfy::MP, mp
+    assert_kind_of Twfy::Constituency, mp.constituency
     assert_kind_of OpenStruct, @client.mp_info(:id=>mp.person_id)
   end
 
