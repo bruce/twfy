@@ -1,9 +1,0 @@
-History.txt
-Manifest.txt
-README.txt
-Rakefile
-lib/data_element.rb
-lib/twfy.rb
-test/test_twfy.rb
-test/test_twfy_chain.rb
-test/api_key

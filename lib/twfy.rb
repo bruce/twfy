@@ -1,34 +1,33 @@
-require 'rubygems'
 require 'open-uri'
 require 'json'
 require 'cgi'
 require 'ostruct'
 require 'logger'
 
-require File.join(File.dirname(__FILE__), 'data_element')
+require 'twfy/data_element'
+require 'twfy/version'
 
 module Twfy
-  
-  VERSION = '1.0.1'
+
   BASE = URI.parse('http://www.theyworkforyou.com/api/')
-  
+
   API_VERSION = '1.0.0'
-  
+
   class Client
-    
+
     class Error < ::StandardError; end
     class ServiceArgumentError < ::ArgumentError; end
     class APIError < ::StandardError; end
-            
+
     def initialize(api_key, log_to=$stderr)
       @api_key = api_key
       @logger = Logger.new(log_to)
     end
-    
+
     def log(message, level=:info)
       @logger.send(level, message) if $DEBUG
     end
-    
+
     def convert_url(params={})
       service :convertURL, validate(params, :require => :url) do |value|
         URI.parse(value['url'])
@@ -63,10 +62,12 @@ module Twfy
       service :getLords, validate(params, :allow => [:date, :party, :search])
     end
 
+    # Members of Legislative Assembly
     def mlas(params={})
       service :getMLAs, validate(params, :allow => [:date, :party, :search])
     end
 
+    # Member of Scottish parliament
     def msps(params={})
       service :getMSPs, validate(params, :allow => [:date, :party, :search])
     end
@@ -85,25 +86,26 @@ module Twfy
         :person => [:order, :page, :num]
       })
     end
-    
+
+
     def wrans(params={})
       service :getWrans, validate(params, :require_one_of => [:date, :person, :search, :gid], :allow_dependencies => {
         :search => [:order, :page, :num],
         :person => [:order, :page, :num]
       } )
     end
-    
+
     def wms(params={})
       service :getWMS, validate(params, :require_one_of => [:date, :person, :search, :gid], :allow_dependencies => {
         :search => [:order, :page, :num],
         :person => [:order, :page, :num]
       } )
     end
-    
+
     def comments(params={})
       service :getComments, validate(params, :allow => [:date, :search, :user_id, :pid, :page, :num])
     end
-    
+
     def service(name, params={}, target=OpenStruct, &block)
       log "Calling service #{name}"
       url = BASE + name.to_s
@@ -119,28 +121,28 @@ module Twfy
         structure result, block || target
       end
     end
-            
+
     #######
     private
     #######
-    
+
     def validate(params, against)
       requirements = against[:require].kind_of?(Array) ? against[:require] : [against[:require]].compact
       allowed = against[:allow].kind_of?(Array) ? against[:allow] : [against[:allow]].compact
       require_one = against[:require_one_of].kind_of?(Array) ? against[:require_one_of] : [against[:require_one_of]].compact
       allow_dependencies = against[:allow_dependencies] || {}
       provided_keys = params.keys.map{|k| k.to_sym }
-      
+
       # Add allowed dependencies
       allow_dependencies.each do |key,dependent_keys|
         dependent_keys = dependent_keys.kind_of?(Array) ? dependent_keys : [dependent_keys].compact
         allowed += dependent_keys if provided_keys.include?(key)
       end
-      
+
       if (missing = requirements.select{|r| !provided_keys.include? r }).any?
         raise ServiceArgumentError, "Missing required params #{missing.inspect}"
       end
-      
+
       if require_one.any?
         if (count = provided_keys.inject(0){|count,item| count + (require_one.include?(item) ? 1 : 0) }) < 1
           raise ServiceArgumentError, "Need exactly one of #{require_one.inspect}"
@@ -148,14 +150,14 @@ module Twfy
           raise ServiceArgumentError, "Only one of #{require_one.inspect} allowed"
         end
       end
-      
+
       unless (extra = provided_keys - (requirements + allowed + require_one)).empty?
         raise ServiceArgumentError, "Unknown params #{extra.inspect}"
       end
-      
+
       params
     end
-    
+
     def structure(value, target)
       case value
       when Array
@@ -172,12 +174,12 @@ module Twfy
         result
       end
     end
-    
+
     def build_query(params)
       params.update(:key=>@api_key, :version=>API_VERSION)
       params.map{|set| set.map{|i| CGI.escape(i.to_s)}.join('=') }.join('&')
     end
-        
+
   end
-  
+
 end
