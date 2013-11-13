@@ -7,6 +7,7 @@ module Twfy
 
   autoload :VERSION,     'twfy/version'
   autoload :Client,      'twfy/client'
+  autoload :Validation,  'twfy/validation'
 
   autoload :DataElement, 'twfy/data_element'
   autoload :Constituency, 'twfy/constituency'

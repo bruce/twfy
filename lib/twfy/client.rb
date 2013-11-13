@@ -9,7 +9,6 @@ module Twfy
   class Client
 
     class Error < ::StandardError; end
-    class ServiceArgumentError < ::ArgumentError; end
     class APIError < ::StandardError; end
 
     def initialize(api_key, log_to=$stderr)
@@ -129,34 +128,7 @@ module Twfy
     private
 
     def validate(params, against)
-      requirements = against[:require].kind_of?(Array) ? against[:require] : [against[:require]].compact
-      allowed = against[:allow].kind_of?(Array) ? against[:allow] : [against[:allow]].compact
-      require_one = against[:require_one_of].kind_of?(Array) ? against[:require_one_of] : [against[:require_one_of]].compact
-      allow_dependencies = against[:allow_dependencies] || {}
-      provided_keys = params.keys.map{|k| k.to_sym }
-
-      # Add allowed dependencies
-      allow_dependencies.each do |key,dependent_keys|
-        dependent_keys = dependent_keys.kind_of?(Array) ? dependent_keys : [dependent_keys].compact
-        allowed += dependent_keys if provided_keys.include?(key)
-      end
-
-      if (missing = requirements.select{|r| !provided_keys.include? r }).any?
-        raise ServiceArgumentError, "Missing required params #{missing.inspect}"
-      end
-
-      if require_one.any?
-        if (count = provided_keys.inject(0){|count,item| count + (require_one.include?(item) ? 1 : 0) }) < 1
-          raise ServiceArgumentError, "Need exactly one of #{require_one.inspect}"
-        elsif count > 1
-          raise ServiceArgumentError, "Only one of #{require_one.inspect} allowed"
-        end
-      end
-
-      unless (extra = provided_keys - (requirements + allowed + require_one)).empty?
-        raise ServiceArgumentError, "Unknown params #{extra.inspect}"
-      end
-
+      Validation.run(params, against)
       params
     end
 

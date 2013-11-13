@@ -8,13 +8,13 @@ class ClientTest < TwfyTest
   end
 
   def test_convert_url
-    uri = @client.convert_url(:url=>'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061018/debtext/61018-0002.htm#06101834000471')
+    uri = @client.convert_url(url: 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061018/debtext/61018-0002.htm#06101834000471')
     assert_kind_of URI::HTTP, uri
     assert_equal "www.theyworkforyou.com", uri.host
   end
 
   def test_mp_and_mp_info
-    mp = @client.mp(:postcode=>'IP6 9PN')
+    mp = @client.mp(postcode: 'IP6 9PN')
     assert_kind_of Twfy::MP, mp
     assert_kind_of Twfy::Constituency, mp.constituency
     assert_kind_of OpenStruct, @client.mp_info(:id=>mp.person_id)
@@ -37,7 +37,7 @@ class ClientTest < TwfyTest
   end
 
   def test_constituency_and_geometry
-    c = @client.constituency(:postcode => 'IP6 9PN')
+    c = @client.constituency(postcode: 'IP6 9PN')
     assert_kind_of Twfy::Constituency, c
     assert_kind_of Twfy::Geometry, @client.geometry(:name=>c.name)
   end
