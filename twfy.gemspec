@@ -6,7 +6,7 @@ require 'twfy/version'
 Gem::Specification.new do |spec|
   spec.name          = "twfy"
   spec.version       = Twfy::VERSION
-  spec.authors       = ["Tom Hipkin", "Bruce Williams", "Martin Owen"]
+  spec.authors       = ["Tom Hipkin", "Martin Owen", "Bruce Williams"]
   spec.email         = ["brwcodes@gmail.com", "tomhipkin@gmail.com"]
   spec.description   = "Ruby library to interface with the TheyWorkForYou API."
   spec.summary       = "Ruby library to interface with the TheyWorkForYou API. TheyWorkForYou.com is a non-partisan, volunteer-run website which aims to make it easy for people to keep tabs on their elected and unelected representatives in Parliament."
