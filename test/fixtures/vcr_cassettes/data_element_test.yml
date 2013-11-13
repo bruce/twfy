@@ -1,0 +1,240 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.theyworkforyou.com/api/getMP?key=<API_KEY>&postcode=IP6%209PN&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Fri, 07 May 2010 02:51:26 +0100
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      X-Url:
+      - /api/getMP?postcode=IP6+9PN&key=<API_KEY>&version=1.0.0
+      Content-Length:
+      - '506'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 13 Nov 2013 00:52:16 GMT
+      Age:
+      - '3'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"member_id":"40156","house":"1","first_name":"Daniel","last_name":"Poulter","constituency":"Central
+        Suffolk and North Ipswich","party":"Conservative","entered_house":"2010-05-06","left_house":"9999-12-31","entered_reason":"general_election","left_reason":"still_in_office","person_id":"24756","title":"","lastupdate":"2010-05-07
+        02:51:26","full_name":"Daniel Poulter","url":"/mp/24756/daniel_poulter/central_suffolk_and_north_ipswich","image":"/images/mpsL/24756.jpeg","image_height":118,"image_width":78}'
+    http_version: 
+  recorded_at: Wed, 13 Nov 2013 00:52:16 GMT
+- request:
+    method: get
+    uri: http://www.theyworkforyou.com/api/getGeometry?key=<API_KEY>&name=Central%20Suffolk%20and%20North%20Ipswich&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      X-Url:
+      - /api/getGeometry?name=Central+Suffolk+and+North+Ipswich&key=<API_KEY>&version=1.0.0
+      Content-Length:
+      - '359'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 13 Nov 2013 00:52:16 GMT
+      Age:
+      - '4'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"max_e":636672.1,"srid_en":27700,"area":796226596.18,"max_n":283760.6,"min_lat":52.0407410207,"max_lat":52.4044029233,"centre_n":263028.158509,"max_lon":1.46434493435,"centre_lon":1.22112407587,"min_n":242895.4,"parts":1,"centre_e":620106.539681,"min_e":602204.5,"min_lon":0.951515301231,"centre_lat":52.2215670245,"name":"Central
+        Suffolk and North Ipswich"}'
+    http_version: 
+  recorded_at: Wed, 13 Nov 2013 00:52:17 GMT
+- request:
+    method: get
+    uri: http://www.theyworkforyou.com/api/getMPInfo?id=24756&key=<API_KEY>&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 12 Nov 2013 03:38:59 +0000
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      X-Url:
+      - /api/getMPInfo?id=24756&key=<API_KEY>&version=1.0.0
+      Content-Length:
+      - '6072'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 13 Nov 2013 00:52:16 GMT
+      Age:
+      - '4'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"comments_on_speeches":"2","comments_on_speeches_quintile":"3","comments_on_speeches_rank":"450","comments_on_speeches_rank_joint":"48","comments_on_speeches_rank_outof":"650","debate_sectionsspoken_inlastyear":"32","debate_sectionsspoken_inlastyear_quintile":"2","debate_sectionsspoken_inlastyear_rank":"314","debate_sectionsspoken_inlastyear_rank_joint":"8","debate_sectionsspoken_inlastyear_rank_outof":"650","maiden_speech":"uk.org.publicwhip/debate/2010-06-22c.151.6","public_whip_dreammp1052_absent":"0","public_whip_dreammp1052_both_voted":"2","public_whip_dreammp1052_distance":"0","public_whip_dreammp1053_absent":"0","public_whip_dreammp1053_both_voted":"1","public_whip_dreammp1053_distance":"0","public_whip_dreammp1065_absent":"0","public_whip_dreammp1065_both_voted":"4","public_whip_dreammp1065_distance":"0.0833333","public_whip_dreammp1074_absent":"1","public_whip_dreammp1074_both_voted":"10","public_whip_dreammp1074_distance":"0.0641026","public_whip_dreammp1084_absent":"0","public_whip_dreammp1084_both_voted":"1","public_whip_dreammp1084_distance":"1","public_whip_dreammp1109_absent":"0","public_whip_dreammp1109_both_voted":"2","public_whip_dreammp1109_distance":"0","public_whip_dreammp1110_absent":"0","public_whip_dreammp1110_both_voted":"10","public_whip_dreammp1110_distance":"0","public_whip_dreammp1124_absent":"0","public_whip_dreammp1124_both_voted":"1","public_whip_dreammp1124_distance":"0","public_whip_dreammp1132_absent":"0","public_whip_dreammp1132_both_voted":"1","public_whip_dreammp1132_distance":"0","public_whip_dreammp811_absent":"0","public_whip_dreammp811_both_voted":"1","public_whip_dreammp811_distance":"0","public_whip_dreammp826_absent":"0","public_whip_dreammp826_both_voted":"4","public_whip_dreammp826_distance":"0","public_whip_dreammp984_absent":"0","public_whip_dreammp984_both_voted":"1","public_whip_dreammp984_distance":"0","reading_ease":"47.0414979003198","reading_ease_quintile":"4","reading_ease_rank":"534","reading_ease_rank_outof":"645","reading_year":"14.2795015913675","reading_year_quintile":"0","reading_year_rank":"81","reading_year_rank_outof":"645","register_member_interests_date":"2013-10-28","register_member_interests_html":"<div
+        class=\"regmemcategory\">2. Remunerated employment, office, profession etc</div>\n<div
+        class=\"regmemitem\">  Medical doctor</div>\n","select_committees":"0","select_committees_chair":"0","three_word_alliterations":"167","three_word_alliterations_quintile":"2","three_word_alliterations_rank":"363","three_word_alliterations_rank_joint":"2","three_word_alliterations_rank_outof":"650","three_word_alliteration_content":":to
+        take to:will work with:make my maiden:true that throughout:he has had:that
+        the treatment:it is important:that the true:the time that:the time to:and
+        about a:to trust them:it is impossible:think that there:should support such:to
+        tailor their:has he had:is invest in:it is important:to talk to:profit per
+        pig:it is important:onus on our:when we were:time to time:industry is in:be
+        bad because:should show some:after an ageing:through talking therapies:on
+        one of:bodies being bandied:it is important:important in improving:and alcohol
+        abuse:to try to:whereas\n\nwhat we:if it is:when we were:thanks to the:that
+        the two:all agree about:that they take:which we will:the train through:to
+        tackle the:think that there:important issue in:it is in:it is important:to
+        tackle these:to tackle this:it is important:tribute to the:it is important:investment
+        in increasing:support system should:women whom we:save social services:it
+        is important:the time that:specialist surgical services:it is important:it
+        is important:it is important:it is important:together to try:it is important:and
+        as a:work with women:way we would:at an average:has huge health:it is important:workers
+        who work:be brought back:party political points:not necessarily need:tribute
+        to the:it is important:why we would:trusts throughout the:interest in it:that
+        these things:also attracted attention:to travel to:important it is:the time
+        they:taking the time:turn to the:are available across:tribute to the:to talk
+        to:training thanks to:it is important:to tackle the:are already available:and
+        an ageing:reducing readmission rates:tribute to the:it is important:together
+        to talk:are at a:say something specifically:to try to:to take things:to their
+        task:to the trust:to talk through:operate out of:transfer times to:that the
+        trust:that the trust:thought that the:accrued as a:that trust to:that the
+        time:and accident and:to the table:to tackle that:it is irresponsible:the
+        talking therapies:it is important:and at a:it is important:testament to the:against
+        accident and:it is important:an accident and:it is ironic:that the trust:is
+        important in:it is important:to the task:tribute to the:funding formula for:formula
+        for funding:appointed as a:true that tariff:tribute to the:is implicit in:to
+        the topics:to their task:investing in integration:the trust to:that the trust:the
+        trust to:to talk through:tribute to the:are also amending:about as a:to talk
+        that:and are a:are anticipating a:and an ageing:issues in improving:tools
+        that the:to talk this:tribute to the:thanks to the:what went wrong:to try
+        to:thanks to the:to tackle them:it is important:and appropriate and:trying
+        to tighten","wikipedia_url":"http://en.wikipedia.org/wiki/Daniel_Poulter","wrans_answered_inlastyear":"1291","wrans_asked_inlastyear":"0","wrans_asked_inlastyear_quintile":"4","wrans_asked_inlastyear_rank":"525","wrans_asked_inlastyear_rank_joint":"126","wrans_asked_inlastyear_rank_outof":"650","wrans_departments":"Health,
+        Education, Environment Food and Rural Affairs, Energy and Climate Change,
+        Transport","wrans_subjects":"Poultry: Animal Welfare, General Practitioners,
+        NHS: Pensions, Ambulance Services: Standards, NHS: Drugs","by_member_id":{"40156":{"public_whip_division_attendance":"81.52%","public_whip_data_date":"2013-11-08","public_whip_rebellions":"1.92%","public_whip_rebelrank":"108","public_whip_attendrank":"163","public_whip_rebelrank_outof":"643","public_whip_attendrank_outof":"650"}}}'
+    http_version: 
+  recorded_at: Wed, 13 Nov 2013 00:52:17 GMT
+- request:
+    method: get
+    uri: http://www.theyworkforyou.com/api/getMPInfo?id=24756&key=<API_KEY>&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 12 Nov 2013 03:38:59 +0000
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      X-Url:
+      - /api/getMPInfo?id=24756&key=<API_KEY>&version=1.0.0
+      Content-Length:
+      - '6072'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 13 Nov 2013 00:52:17 GMT
+      Age:
+      - '4'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"comments_on_speeches":"2","comments_on_speeches_quintile":"3","comments_on_speeches_rank":"450","comments_on_speeches_rank_joint":"48","comments_on_speeches_rank_outof":"650","debate_sectionsspoken_inlastyear":"32","debate_sectionsspoken_inlastyear_quintile":"2","debate_sectionsspoken_inlastyear_rank":"314","debate_sectionsspoken_inlastyear_rank_joint":"8","debate_sectionsspoken_inlastyear_rank_outof":"650","maiden_speech":"uk.org.publicwhip/debate/2010-06-22c.151.6","public_whip_dreammp1052_absent":"0","public_whip_dreammp1052_both_voted":"2","public_whip_dreammp1052_distance":"0","public_whip_dreammp1053_absent":"0","public_whip_dreammp1053_both_voted":"1","public_whip_dreammp1053_distance":"0","public_whip_dreammp1065_absent":"0","public_whip_dreammp1065_both_voted":"4","public_whip_dreammp1065_distance":"0.0833333","public_whip_dreammp1074_absent":"1","public_whip_dreammp1074_both_voted":"10","public_whip_dreammp1074_distance":"0.0641026","public_whip_dreammp1084_absent":"0","public_whip_dreammp1084_both_voted":"1","public_whip_dreammp1084_distance":"1","public_whip_dreammp1109_absent":"0","public_whip_dreammp1109_both_voted":"2","public_whip_dreammp1109_distance":"0","public_whip_dreammp1110_absent":"0","public_whip_dreammp1110_both_voted":"10","public_whip_dreammp1110_distance":"0","public_whip_dreammp1124_absent":"0","public_whip_dreammp1124_both_voted":"1","public_whip_dreammp1124_distance":"0","public_whip_dreammp1132_absent":"0","public_whip_dreammp1132_both_voted":"1","public_whip_dreammp1132_distance":"0","public_whip_dreammp811_absent":"0","public_whip_dreammp811_both_voted":"1","public_whip_dreammp811_distance":"0","public_whip_dreammp826_absent":"0","public_whip_dreammp826_both_voted":"4","public_whip_dreammp826_distance":"0","public_whip_dreammp984_absent":"0","public_whip_dreammp984_both_voted":"1","public_whip_dreammp984_distance":"0","reading_ease":"47.0414979003198","reading_ease_quintile":"4","reading_ease_rank":"534","reading_ease_rank_outof":"645","reading_year":"14.2795015913675","reading_year_quintile":"0","reading_year_rank":"81","reading_year_rank_outof":"645","register_member_interests_date":"2013-10-28","register_member_interests_html":"<div
+        class=\"regmemcategory\">2. Remunerated employment, office, profession etc</div>\n<div
+        class=\"regmemitem\">  Medical doctor</div>\n","select_committees":"0","select_committees_chair":"0","three_word_alliterations":"167","three_word_alliterations_quintile":"2","three_word_alliterations_rank":"363","three_word_alliterations_rank_joint":"2","three_word_alliterations_rank_outof":"650","three_word_alliteration_content":":to
+        take to:will work with:make my maiden:true that throughout:he has had:that
+        the treatment:it is important:that the true:the time that:the time to:and
+        about a:to trust them:it is impossible:think that there:should support such:to
+        tailor their:has he had:is invest in:it is important:to talk to:profit per
+        pig:it is important:onus on our:when we were:time to time:industry is in:be
+        bad because:should show some:after an ageing:through talking therapies:on
+        one of:bodies being bandied:it is important:important in improving:and alcohol
+        abuse:to try to:whereas\n\nwhat we:if it is:when we were:thanks to the:that
+        the two:all agree about:that they take:which we will:the train through:to
+        tackle the:think that there:important issue in:it is in:it is important:to
+        tackle these:to tackle this:it is important:tribute to the:it is important:investment
+        in increasing:support system should:women whom we:save social services:it
+        is important:the time that:specialist surgical services:it is important:it
+        is important:it is important:it is important:together to try:it is important:and
+        as a:work with women:way we would:at an average:has huge health:it is important:workers
+        who work:be brought back:party political points:not necessarily need:tribute
+        to the:it is important:why we would:trusts throughout the:interest in it:that
+        these things:also attracted attention:to travel to:important it is:the time
+        they:taking the time:turn to the:are available across:tribute to the:to talk
+        to:training thanks to:it is important:to tackle the:are already available:and
+        an ageing:reducing readmission rates:tribute to the:it is important:together
+        to talk:are at a:say something specifically:to try to:to take things:to their
+        task:to the trust:to talk through:operate out of:transfer times to:that the
+        trust:that the trust:thought that the:accrued as a:that trust to:that the
+        time:and accident and:to the table:to tackle that:it is irresponsible:the
+        talking therapies:it is important:and at a:it is important:testament to the:against
+        accident and:it is important:an accident and:it is ironic:that the trust:is
+        important in:it is important:to the task:tribute to the:funding formula for:formula
+        for funding:appointed as a:true that tariff:tribute to the:is implicit in:to
+        the topics:to their task:investing in integration:the trust to:that the trust:the
+        trust to:to talk through:tribute to the:are also amending:about as a:to talk
+        that:and are a:are anticipating a:and an ageing:issues in improving:tools
+        that the:to talk this:tribute to the:thanks to the:what went wrong:to try
+        to:thanks to the:to tackle them:it is important:and appropriate and:trying
+        to tighten","wikipedia_url":"http://en.wikipedia.org/wiki/Daniel_Poulter","wrans_answered_inlastyear":"1291","wrans_asked_inlastyear":"0","wrans_asked_inlastyear_quintile":"4","wrans_asked_inlastyear_rank":"525","wrans_asked_inlastyear_rank_joint":"126","wrans_asked_inlastyear_rank_outof":"650","wrans_departments":"Health,
+        Education, Environment Food and Rural Affairs, Energy and Climate Change,
+        Transport","wrans_subjects":"Poultry: Animal Welfare, General Practitioners,
+        NHS: Pensions, Ambulance Services: Standards, NHS: Drugs","by_member_id":{"40156":{"public_whip_division_attendance":"81.52%","public_whip_data_date":"2013-11-08","public_whip_rebellions":"1.92%","public_whip_rebelrank":"108","public_whip_attendrank":"163","public_whip_rebelrank_outof":"643","public_whip_attendrank_outof":"650"}}}'
+    http_version: 
+  recorded_at: Wed, 13 Nov 2013 00:52:18 GMT
+recorded_with: VCR 2.5.0
