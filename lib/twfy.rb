@@ -9,9 +9,12 @@ module Twfy
   autoload :Client,      'twfy/client'
   autoload :Validation,  'twfy/validation'
 
-  autoload :DataElement, 'twfy/data_element'
+  autoload :DataElement,  'twfy/data_element'
   autoload :Constituency, 'twfy/constituency'
   autoload :Geometry,     'twfy/geometry'
   autoload :MP,           'twfy/mp'
+
+  autoload :Commands,   'twfy/commands'
+  autoload :API,        'twfy/api'
 
 end
