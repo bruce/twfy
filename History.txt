@@ -1,3 +1,9 @@
+== 1.1.0 / 2013-11-12
+
+* Modernize source
+* Support Ruby 1.9, 2.0
+* Requires >= Ruby 1.9
+
 == 1.0.1 / 2008-08-02
 
 * In the near future the TWFY API will require an API Key for all calls. In preparation for this, this binding now requires an API Key. They are available at http://www.theyworkforyou.com/api/key
