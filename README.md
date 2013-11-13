@@ -14,7 +14,7 @@ methods are in lowercase and don't include the `get` prefix.
 Some examples:
 
  * `getComments` -> `comments`
- * `getMPs` -> `@mps`
+ * `getMPs` -> `mps`
  * `getMPInfo` -> `mp_info`
 
 ## Requirements
