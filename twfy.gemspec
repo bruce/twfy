@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "multi_json"
   spec.add_dependency "paginator", "~> 1.2"
   spec.add_development_dependency "bundler", "~> 1.3.5"
-  spec.add_development_dependency "oj"
+  spec.add_development_dependency "json"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
 
