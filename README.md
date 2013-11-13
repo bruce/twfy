@@ -4,6 +4,7 @@ A Ruby library to interface with the
 [TheyWorkForYou](http://www.theyworkforyou.com) API.
 
 [![Build Status](https://travis-ci.org/bruce/twfy.png?branch=master)](https://travis-ci.org/bruce/twfy)
+[![Code Climate](https://codeclimate.com/github/bruce/twfy.png)](https://codeclimate.com/github/bruce/twfy)
 
 ## Features
 
