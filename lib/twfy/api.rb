@@ -6,7 +6,7 @@ module Twfy
 
     VALIDATIONS = {
       convertURL: {require: :url},
-      getConstituency: {require: :postcode},
+      getConstituency: {require_one_of: [:postcode, :name]},
       getConstituencies: {allow: [:date, :search, :longitude, :latitude, :distance]},
       getMP: {allow: [:postcode, :constituency, :id, :always_return]},
       getMPInfo: {require: :id},
