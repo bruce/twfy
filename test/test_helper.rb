@@ -1,7 +1,7 @@
 $LOAD_PATH.push File.expand_path('../../lib', __FILE__)
 
 require 'twfy'
-require 'test/unit'
+require 'minitest/autorun'
 require 'vcr'
 
 # If you need to record new episodes, run rake with:
@@ -17,7 +17,7 @@ VCR.configure do |c|
   c.default_cassette_options = {record: :new_episodes}
 end
 
-class TwfyTest < Test::Unit::TestCase
+class TwfyTest < Minitest::Test
 
   def api_key
     @api_key ||= TEST_API_KEY
