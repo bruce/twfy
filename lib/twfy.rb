@@ -2,7 +2,7 @@ require 'uri'
 
 module Twfy
 
-  BASE        = URI.parse('http://www.theyworkforyou.com/api/')
+  BASE        = URI.parse('https://www.theyworkforyou.com/api/')
   API_VERSION = '1.0.0'
 
   autoload :VERSION,     'twfy/version'

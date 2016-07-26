@@ -5,7 +5,7 @@ module Twfy
     convert_to_date :entered_house, :left_house
 
     convert :image do |value|
-      URI.parse("http://theyworkforyou.com#{value}")
+      URI.parse("https://theyworkforyou.com#{value}")
     end
 
     convert :constituency do |source, value|
