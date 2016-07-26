@@ -2,7 +2,7 @@ require "test_helper.rb"
 
 class DataElementSpec < Twfy::Spec
 
-  describe Twfy::DataElement, vcr: {record: :new_episodes} do
+  describe Twfy::DataElement, :vcr do
 
     before do
       @client = Twfy::Client.new(api_key)

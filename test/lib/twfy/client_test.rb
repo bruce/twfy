@@ -2,7 +2,7 @@ require "test_helper"
 
 class ClientSpec < Twfy::Spec
 
-  describe Twfy::Client, vcr: {record: :new_episodes} do
+  describe Twfy::Client, :vcr do
 
     before do
       @client = Twfy::Client.new(api_key)

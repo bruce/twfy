@@ -17,7 +17,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
   c.hook_into :webmock
   c.filter_sensitive_data("<API_KEY>") { TEST_API_KEY }
-  c.default_cassette_options = {record: :new_episodes}
+  c.default_cassette_options = {record: :none}
 end
 
 MinitestVcr::Spec.configure!
