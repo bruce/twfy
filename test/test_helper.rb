@@ -1,8 +1,11 @@
 $LOAD_PATH.push File.expand_path('../../lib', __FILE__)
 
 require 'twfy'
+
 require 'minitest/autorun'
+
 require 'vcr'
+require 'minitest-vcr'
 
 # If you need to record new episodes, run rake with:
 #
@@ -17,22 +20,12 @@ VCR.configure do |c|
   c.default_cassette_options = {record: :new_episodes}
 end
 
-class TwfyTest < Minitest::Test
+MinitestVcr::Spec.configure!
+
+class Twfy::Spec < Minitest::Spec
 
   def api_key
     @api_key ||= TEST_API_KEY
-  end
-
-  def setup
-    VCR.insert_cassette self.class.name.gsub(/::/, '/').
-      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-      gsub(/([a-z\d])([A-Z])/,'\1_\2').
-      tr("-", "_").
-      downcase
-  end
-
-  def teardown
-    VCR.eject_cassette
   end
 
 end

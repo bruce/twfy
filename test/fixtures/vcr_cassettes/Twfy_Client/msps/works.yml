@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.theyworkforyou.com/api/getMSPs?key=<API_KEY>&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 26 Jul 2016 02:42:20 GMT
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      Content-Length:
+      - '16413'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Last-Modified:
+      - Wed, 25 May 2016 09:44:14 +0100
+      X-Url:
+      - "/api/getMSPs?key=<API_KEY>&version=1.0.0"
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '[{"member_id":"80551","person_id":"25072","name":"George Adam","party":"Scottish
+        National Party","constituency":"Paisley"},{"member_id":"80552","person_id":"25073","name":"Clare
+        Adamson","party":"Scottish National Party","constituency":"Motherwell and
+        Wishaw"},{"member_id":"80553","person_id":"13947","name":"Alasdair Allan","party":"Scottish
+        National Party","constituency":"Na h-Eileanan an Iar"},{"member_id":"80554","person_id":"25491","name":"Tom
+        Arthur","party":"Scottish National Party","constituency":"Renfrewshire South"},{"member_id":"80555","person_id":"13949","name":"Jackie
+        Baillie","party":"Labour","constituency":"Dumbarton"},{"member_id":"80556","person_id":"13951","name":"Claire
+        Baker","party":"Labour","constituency":"Mid Scotland and Fife"},{"member_id":"80557","person_id":"25492","name":"Jeremy
+        Balfour","party":"Conservative","constituency":"Lothian"},{"member_id":"80558","person_id":"25090","name":"Claudia
+        Beamish","party":"Labour","constituency":"South Scotland"},{"member_id":"80559","person_id":"25074","name":"Colin
+        Beattie","party":"Scottish National Party","constituency":"Midlothian North
+        and Musselburgh"},{"member_id":"80560","person_id":"25076","name":"Neil Bibby","party":"Labour","constituency":"West
+        Scotland"},{"member_id":"80561","person_id":"25494","name":"Miles Briggs","party":"Conservative","constituency":"Lothian"},{"member_id":"80562","person_id":"13961","name":"Keith
+        Brown","party":"Scottish National Party","constituency":"Clackmannanshire
+        and Dunblane"},{"member_id":"80563","person_id":"25495","name":"Alexander
+        Burnett","party":"Conservative","constituency":"Aberdeenshire West"},{"member_id":"80564","person_id":"25496","name":"Donald
+        Cameron","party":"Conservative","constituency":"Highlands and Islands"},{"member_id":"80565","person_id":"13966","name":"Aileen
+        Campbell","party":"Scottish National Party","constituency":"Clydesdale"},{"member_id":"80566","person_id":"13967","name":"Jackson
+        Carlaw","party":"Conservative","constituency":"Eastwood"},{"member_id":"80567","person_id":"25497","name":"Finlay
+        Carson","party":"Conservative","constituency":"Galloway and West Dumfries"},{"member_id":"80568","person_id":"25498","name":"Peter
+        Chapman","party":"Conservative","constituency":"North East Scotland"},{"member_id":"80569","person_id":"13968","name":"Willie
+        Coffey","party":"Scottish National Party","constituency":"Kilmarnock and Irvine
+        Valley"},{"member_id":"80570","person_id":"25500","name":"Alex Cole-Hamilton","party":"Liberal
+        Democrat","constituency":"Edinburgh Western"},{"member_id":"80571","person_id":"13969","name":"Angela
+        Constance","party":"Scottish National Party","constituency":"Almond Valley"},{"member_id":"80572","person_id":"25501","name":"Maurice
+        Corry","party":"Conservative","constituency":"West Scotland"},{"member_id":"80573","person_id":"13971","name":"Bruce
+        Crawford","party":"Scottish National Party","constituency":"Stirling"},{"member_id":"80574","person_id":"10148","name":"Roseanna
+        Cunningham","party":"Scottish National Party","constituency":"Perthshire South
+        and Kinross-shire"},{"member_id":"80575","person_id":"25080","name":"Ruth
+        Davidson","party":"Conservative","constituency":"Edinburgh Central"},{"member_id":"80576","person_id":"25502","name":"Ash
+        Denham","party":"Scottish National Party","constituency":"Edinburgh Eastern"},{"member_id":"80577","person_id":"25081","name":"Graeme
+        Dey","party":"Scottish National Party","constituency":"Angus South"},{"member_id":"80578","person_id":"13977","name":"Bob
+        Doris","party":"Scottish National Party","constituency":"Glasgow Maryhill
+        and Springburn"},{"member_id":"80579","person_id":"25082","name":"James Dornan","party":"Scottish
+        National Party","constituency":"Glasgow Cathcart"},{"member_id":"80580","person_id":"25083","name":"Kezia
+        Dugdale","party":"Labour","constituency":"Lothian"},{"member_id":"80581","person_id":"25503","name":"Mairi
+        Evans","party":"Scottish National Party","constituency":"Angus North and Mearns"},{"member_id":"80582","person_id":"25085","name":"Annabelle
+        Ewing","party":"Scottish National Party","constituency":"Cowdenbeath"},{"member_id":"80583","person_id":"13980","name":"Fergus
+        Ewing","party":"Scottish National Party","constituency":"Inverness and Nairn"},{"member_id":"80584","person_id":"13982","name":"Linda
+        Fabiani","party":"Scottish National Party","constituency":"East Kilbride"},{"member_id":"80585","person_id":"25086","name":"Mary
+        Fee","party":"Labour","constituency":"West Scotland"},{"member_id":"80586","person_id":"25087","name":"Neil
+        Findlay","party":"Labour","constituency":"Lothian"},{"member_id":"80587","person_id":"25088","name":"John
+        Finnie","party":"Green","constituency":"Highlands and Islands"},{"member_id":"80588","person_id":"13987","name":"Joe
+        FitzPatrick","party":"Scottish National Party","constituency":"Dundee City
+        West"},{"member_id":"80589","person_id":"25504","name":"Kate Forbes","party":"Scottish
+        National Party","constituency":"Skye, Lochaber and Badenoch"},{"member_id":"80590","person_id":"13991","name":"Murdo
+        Fraser","party":"Conservative","constituency":"Mid Scotland and Fife"},{"member_id":"80591","person_id":"25505","name":"Jeane
+        Freeman","party":"Scottish National Party","constituency":"Carrick, Cumnock
+        and Doon Valley"},{"member_id":"80592","person_id":"13994","name":"Kenneth
+        Gibson","party":"Scottish National Party","constituency":"Cunninghame North"},{"member_id":"80593","person_id":"25506","name":"Jenny
+        Gilruth","party":"Scottish National Party","constituency":"Mid Fife and Glenrothes"},{"member_id":"80594","person_id":"25507","name":"Maurice
+        Golden","party":"Conservative","constituency":"West Scotland"},{"member_id":"80595","person_id":"14000","name":"Christine
+        Grahame","party":"Scottish National Party","constituency":"Midlothian South,
+        Tweeddale and Lauderdale"},{"member_id":"80596","person_id":"14001","name":"Rhoda
+        Grant","party":"Labour","constituency":"Highlands and Islands"},{"member_id":"80597","person_id":"14002","name":"Iain
+        Gray","party":"Labour","constituency":"East Lothian"},{"member_id":"80598","person_id":"25508","name":"Jamie
+        Greene","party":"Conservative","constituency":"West Scotland"},{"member_id":"80599","person_id":"25509","name":"Ross
+        Greer","party":"Green","constituency":"West Scotland"},{"member_id":"80600","person_id":"25089","name":"Mark
+        Griffin","party":"Labour","constituency":"Central Scotland"},{"member_id":"80601","person_id":"25510","name":"Rachael
+        Hamilton","party":"Conservative","constituency":"South Scotland"},{"member_id":"80602","person_id":"25511","name":"Emma
+        Harper","party":"Scottish National Party","constituency":"South Scotland"},{"member_id":"80603","person_id":"25512","name":"Alison
+        Harris","party":"Conservative","constituency":"Central Scotland"},{"member_id":"80604","person_id":"14006","name":"Patrick
+        Harvie","party":"Green","constituency":"Glasgow"},{"member_id":"80605","person_id":"25513","name":"Clare
+        Haughey","party":"Scottish National Party","constituency":"Rutherglen"},{"member_id":"80606","person_id":"14009","name":"Jamie
+        Hepburn","party":"Scottish National Party","constituency":"Cumbernauld and
+        Kilsyth"},{"member_id":"80607","person_id":"14012","name":"Fiona Hyslop","party":"Scottish
+        National Party","constituency":"Linlithgow"},{"member_id":"80608","person_id":"25514","name":"Daniel
+        Johnson","party":"Labour","constituency":"Edinburgh Southern"},{"member_id":"80609","person_id":"14020","name":"Alex
+        Johnstone","party":"Conservative","constituency":"North East Scotland"},{"member_id":"80610","person_id":"25091","name":"Alison
+        Johnstone","party":"Green","constituency":"Lothian"},{"member_id":"80611","person_id":"14022","name":"James
+        Kelly","party":"Labour","constituency":"Glasgow"},{"member_id":"80612","person_id":"25515","name":"Liam
+        Kerr","party":"Conservative","constituency":"North East Scotland"},{"member_id":"80613","person_id":"14024","name":"Bill
+        Kidd","party":"Scottish National Party","constituency":"Glasgow Anniesland"},{"member_id":"80614","person_id":"14025","name":"Johann
+        Lamont","party":"Labour","constituency":"Glasgow"},{"member_id":"80615","person_id":"14026","name":"John
+        Lamont","party":"Conservative","constituency":"Ettrick, Roxburgh and Berwickshire"},{"member_id":"80616","person_id":"25516","name":"Monica
+        Lennon","party":"Labour","constituency":"Central Scotland"},{"member_id":"80617","person_id":"25517","name":"Richard
+        Leonard","party":"Labour","constituency":"Central Scotland"},{"member_id":"80618","person_id":"25518","name":"Gordon
+        Lindhurst","party":"Conservative","constituency":"Lothian"},{"member_id":"80619","person_id":"14029","name":"Richard
+        Lochhead","party":"Scottish National Party","constituency":"Moray"},{"member_id":"80620","person_id":"25519","name":"Dean
+        Lockhart","party":"Conservative","constituency":"Mid Scotland and Fife"},{"member_id":"80621","person_id":"25093","name":"Richard
+        Lyle","party":"Scottish National Party","constituency":"Uddingston and Bellshill"},{"member_id":"80622","person_id":"14034","name":"Lewis
+        Macdonald","party":"Labour","constituency":"North East Scotland"},{"member_id":"80623","person_id":"25094","name":"Angus
+        MacDonald","party":"Scottish National Party","constituency":"Falkirk East"},{"member_id":"80624","person_id":"25095","name":"Gordon
+        MacDonald","party":"Scottish National Party","constituency":"Edinburgh Pentlands"},{"member_id":"80625","person_id":"25521","name":"Fulton
+        MacGregor","party":"Scottish National Party","constituency":"Coatbridge and
+        Chryston"},{"member_id":"80626","person_id":"14035","name":"Kenneth Macintosh","party":"Labour","constituency":"West
+        Scotland"},{"member_id":"80627","person_id":"25522","name":"Rona Mackay","party":"Scottish
+        National Party","constituency":"Strathkelvin and Bearsden"},{"member_id":"80628","person_id":"25096","name":"Derek
+        Mackay","party":"Scottish National Party","constituency":"Renfrewshire North
+        and West"},{"member_id":"80629","person_id":"25523","name":"Ben Macpherson","party":"Scottish
+        National Party","constituency":"Edinburgh Northern and Leith"},{"member_id":"80630","person_id":"25524","name":"Ruth
+        Maguire","party":"Scottish National Party","constituency":"Cunninghame South"},{"member_id":"80631","person_id":"25100","name":"Jenny
+        Marra","party":"Labour","constituency":"North East Scotland"},{"member_id":"80632","person_id":"25525","name":"Gillian
+        Martin","party":"Scottish National Party","constituency":"Aberdeenshire East"},{"member_id":"80633","person_id":"25101","name":"John
+        Mason","party":"Scottish National Party","constituency":"Glasgow Shettleston"},{"member_id":"80634","person_id":"14043","name":"Michael
+        Matheson","party":"Scottish National Party","constituency":"Falkirk West"},{"member_id":"80635","person_id":"25102","name":"Joan
+        McAlpine","party":"Scottish National Party","constituency":"South Scotland"},{"member_id":"80636","person_id":"14046","name":"Liam
+        McArthur","party":"Liberal Democrat","constituency":"Orkney Islands"},{"member_id":"80637","person_id":"25104","name":"Mark
+        McDonald","party":"Scottish National Party","constituency":"Aberdeen Donside"},{"member_id":"80638","person_id":"25527","name":"Ivan
+        McKee","party":"Scottish National Party","constituency":"Glasgow Provan"},{"member_id":"80639","person_id":"14056","name":"Christina
+        McKelvie","party":"Scottish National Party","constituency":"Hamilton, Larkhall
+        and Stonehouse"},{"member_id":"80640","person_id":"14060","name":"Stuart McMillan","party":"Scottish
+        National Party","constituency":"Greenock and Inverclyde"},{"member_id":"80641","person_id":"14062","name":"Pauline
+        McNeill","party":"Labour","constituency":"Glasgow"},{"member_id":"80642","person_id":"14065","name":"Margaret
+        Mitchell","party":"Conservative","constituency":"Central Scotland"},{"member_id":"80643","person_id":"25529","name":"Edward
+        Mountain","party":"Conservative","constituency":"Highlands and Islands"},{"member_id":"80644","person_id":"25530","name":"Oliver
+        Mundell","party":"Conservative","constituency":"Dumfriesshire"},{"member_id":"80645","person_id":"14071","name":"Alex
+        Neil","party":"Scottish National Party","constituency":"Airdrie and Shotts"},{"member_id":"80646","person_id":"14075","name":"Gil
+        Paterson","party":"Scottish National Party","constituency":"Clydebank and
+        Milngavie"},{"member_id":"80647","person_id":"25111","name":"Willie Rennie","party":"Liberal
+        Democrat","constituency":"North East Fife"},{"member_id":"80648","person_id":"14085","name":"Shona
+        Robison","party":"Scottish National Party","constituency":"Dundee City East"},{"member_id":"80649","person_id":"25531","name":"Douglas
+        Ross","party":"Conservative","constituency":"Highlands and Islands"},{"member_id":"80650","person_id":"25532","name":"Gail
+        Ross","party":"Scottish National Party","constituency":"Caithness, Sutherland
+        and Ross"},{"member_id":"80651","person_id":"25218","name":"Alex Rowley","party":"Labour","constituency":"Mid
+        Scotland and Fife"},{"member_id":"80652","person_id":"14087","name":"Mike
+        Rumbles","party":"Liberal Democrat","constituency":"North East Scotland"},{"member_id":"80653","person_id":"14088","name":"Mr
+        Mark Ruskell","party":"Green","constituency":"Mid Scotland and Fife"},{"member_id":"80654","person_id":"14089","name":"Michael
+        Russell","party":"Scottish National Party","constituency":"Argyll and Bute"},{"member_id":"80655","person_id":"24738","name":"Anas
+        Sarwar","party":"Labour","constituency":"Glasgow"},{"member_id":"80656","person_id":"14091","name":"John
+        Scott","party":"Conservative","constituency":"Ayr"},{"member_id":"80657","person_id":"14092","name":"Tavish
+        Scott","party":"Liberal Democrat","constituency":"Shetland Islands"},{"member_id":"80658","person_id":"25535","name":"Graham
+        Simpson","party":"Conservative","constituency":"Central Scotland"},{"member_id":"80659","person_id":"14096","name":"Elizabeth
+        Smith","party":"Conservative","constituency":"Mid Scotland and Fife"},{"member_id":"80660","person_id":"14099","name":"Elaine
+        Smith","party":"Labour","constituency":"Central Scotland"},{"member_id":"80661","person_id":"25536","name":"Colin
+        Smyth","party":"Labour","constituency":"South Scotland"},{"member_id":"80662","person_id":"14100","name":"Shirley-Anne
+        Somerville","party":"Scottish National Party","constituency":"Dunfermline"},{"member_id":"80663","person_id":"14102","name":"Stewart
+        Stevenson","party":"Scottish National Party","constituency":"Banffshire and
+        Buchan Coast"},{"member_id":"80664","person_id":"25114","name":"Kevin Stewart","party":"Scottish
+        National Party","constituency":"Aberdeen Central"},{"member_id":"80665","person_id":"14103","name":"David
+        Stewart","party":"Labour","constituency":"Highlands and Islands"},{"member_id":"80666","person_id":"25538","name":"Alexander
+        Stewart","party":"Conservative","constituency":"Mid Scotland and Fife"},{"member_id":"80667","person_id":"14105","name":"Nicola
+        Sturgeon","party":"Scottish National Party","constituency":"Glasgow Southside"},{"member_id":"80668","person_id":"10581","name":"John
+        Swinney","party":"Scottish National Party","constituency":"Perthshire North"},{"member_id":"80669","person_id":"25539","name":"Ross
+        Thomson","party":"Conservative","constituency":"North East Scotland"},{"member_id":"80670","person_id":"25540","name":"Maree
+        Todd","party":"Scottish National Party","constituency":"Highlands and Islands"},{"member_id":"80671","person_id":"25541","name":"Adam
+        Tomkins","party":"Conservative","constituency":"Glasgow"},{"member_id":"80672","person_id":"25115","name":"David
+        Torrance","party":"Scottish National Party","constituency":"Kirkcaldy"},{"member_id":"80673","person_id":"14115","name":"Maureen
+        Watt","party":"Scottish National Party","constituency":"Aberdeen South and
+        North Kincardine"},{"member_id":"80674","person_id":"25542","name":"Annie
+        Wells","party":"Conservative","constituency":"Glasgow"},{"member_id":"80675","person_id":"25118","name":"Paul
+        Wheelhouse","party":"Scottish National Party","constituency":"South Scotland"},{"member_id":"80676","person_id":"14117","name":"Sandra
+        White","party":"Scottish National Party","constituency":"Glasgow Kelvin"},{"member_id":"80677","person_id":"25543","name":"Brian
+        Whittle","party":"Conservative","constituency":"South Scotland"},{"member_id":"80678","person_id":"25544","name":"Andy
+        Wightman","party":"Green","constituency":"Lothian"},{"member_id":"80679","person_id":"25119","name":"Humza
+        Yousaf","party":"Scottish National Party","constituency":"Glasgow Pollok"}]'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 02:42:20 GMT
+recorded_with: VCR 3.0.3

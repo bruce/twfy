@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.theyworkforyou.com/api/getConstituency?key=<API_KEY>&postcode=IP6%209PN&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 26 Jul 2016 02:42:17 GMT
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      Content-Length:
+      - '274'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Url:
+      - "/api/getConstituency?postcode=IP6+9PN&key=<API_KEY>&version=1.0.0"
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"bbc_constituency_id":"553","guardian_election_results":"http://www.guardian.co.uk/politics/constituency/802/suffolk-central-and-ipswich-north","guardian_id":"802","guardian_name":"Suffolk
+        Central and Ipswich North","pa_id":"547","name":"Central Suffolk and North
+        Ipswich"}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 02:42:17 GMT
+- request:
+    method: get
+    uri: https://www.theyworkforyou.com/api/getGeometry?key=<API_KEY>&name=Central%20Suffolk%20and%20North%20Ipswich&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 26 Jul 2016 02:42:19 GMT
+      Content-Type:
+      - text/javascript; charset=iso-8859-1
+      Content-Length:
+      - '359'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Url:
+      - "/api/getGeometry?name=Central+Suffolk+and+North+Ipswich&key=<API_KEY>&version=1.0.0"
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: '{"max_e":636672.1,"srid_en":27700,"area":796226596.195,"max_n":283760.6,"min_lat":52.040694904,"max_lat":52.4043639353,"centre_n":263028.158547,"max_lon":1.46440065034,"centre_lon":1.22117494193,"min_n":242895.4,"parts":1,"centre_e":620106.539667,"min_e":602204.5,"min_lon":0.951560078518,"centre_lat":52.2215246073,"name":"Central
+        Suffolk and North Ipswich"}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 02:42:19 GMT
+recorded_with: VCR 3.0.3
